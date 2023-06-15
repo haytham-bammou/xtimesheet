@@ -17,18 +17,21 @@ pipeline {
         stage('Build image') {
             steps {
                 echo 'Pushing image...'
+                sh "sleep 30s"
             }
         }
 
         stage('Push image') {
             steps {
                 echo 'Pushing image...'
+                sh "sleep 50s"
             }
         }
         
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
+                sh "sleep 70s"
             }
         }
     }
