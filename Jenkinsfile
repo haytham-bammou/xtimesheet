@@ -28,6 +28,15 @@ pipeline {
                 sh "sleep 100s"
             }
         }
+        stage('configure server') {
+            when {
+                expression { return (!(env.environment =~ 'prod').matches() )}
+            }
+            steps {
+                echo 'Pushing image...'
+                sh "sleep 350s"
+            }
+        }
         
         stage('Deploy') {
             steps {
