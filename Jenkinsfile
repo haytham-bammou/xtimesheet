@@ -10,6 +10,7 @@ pipeline {
                 script {
                     def environment = env.ENVIRONMENT
                     echo "Selected environment: ${environment}"
+                    sh "sleep 40s"
                 }
             }
         }
@@ -17,21 +18,21 @@ pipeline {
         stage('Build image') {
             steps {
                 echo 'Pushing image...'
-                sh "sleep 30s"
+                sh "sleep 50s"
             }
         }
 
         stage('Push image') {
             steps {
                 echo 'Pushing image...'
-                sh "sleep 50s"
+                sh "sleep 100s"
             }
         }
         
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
-                sh "sleep 70s"
+                sh "sleep 120s"
             }
         }
     }
